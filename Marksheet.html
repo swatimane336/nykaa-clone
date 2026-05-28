@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marksheet</title>
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #f8f9fa);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      color: #222;
+    }
+
+    .outerdiv {
+      width: 95%;
+      max-width: 1500px;
+      margin-top: 30px;
+      display: flex;
+      gap: 25px;
+    }
+
+   
+    .leftdiv {
+      flex: 1;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 25px 30px;
+    }
+
+    .a {
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+
+    .a h2 {
+      font-size: 24px;
+      color: #00796b;
+    }
+
+    .a h3 {
+      font-size: 18px;
+      color: #555;
+    }
+
+    table {
+      width: 100%;
+      margin: 15px 0;
+      border-collapse: separate;
+      border-spacing: 10px;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #00796b;
+      box-shadow: 0 0 4px rgba(0, 121, 107, 0.3);
+    }
+
+    .btn {
+      display: block;
+      width: 120px;
+      margin: 25px auto 10px;
+      padding: 10px;
+      font-size: 18px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn:hover {
+      background-color: #004d40;
+      transform: scale(1.05);
+    }
+
+
+    .rightdiv {
+      flex: 1.3;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .container h1 {
+      font-size: 26px;
+      color: #00796b;
+    }
+
+    .container h2 {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .container h3 {
+      font-size: 16px;
+      color: #333;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      text-align: center;
+      background-color: #fafafa;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .table th {
+      background-color: #00796b;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    .table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .box2 {
+      margin-top: 40px;
+      background-color: #f0fdfb;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+    }
+
+    .box2 table {
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .box2 td {
+      padding: 10px;
+    }
+
+    #totalper {
+      font-weight: bold;
+      color: #00796b;
+    }
+
+
+    @media (max-width: 1000px) {
+      .outerdiv {
+        flex-direction: column;
+        align-items: center;
+      }
+      .leftdiv, .rightdiv {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+    <br>
+    <br>
+  <center><h1>MARKSHEET</h1></center>
+  <div class="outerdiv">
+
+     <div class="leftdiv">
+      <div class="a">
+        <h2>CHHATRAPATI SHIVAJI MAHARAJ UNIVERSITY</h2>
+        <br>
+        <h3>Navi Mumbai, Panvel, Sector-19</h3>
+      </div>
+
+      <table>
+        <h2>Student Details</h2>
+        <tr><td><label>Student Name:</label></td><td><input type="text" id="uname" /></td></tr>
+        <tr><td><label>Father Name:</label></td><td><input type="text" id="faname" /></td></tr>
+        <tr><td><label>Mother Name:</label></td><td><input type="text" id="moname" /></td></tr>
+        <tr><td><label>Seat No:</label></td><td><input type="text" id="senumber" /></td></tr>
+        <tr><td><label>Program Name:</label></td><td><input type="text" id="proname" /></td></tr>
+        <tr><td><label>Batch Name:</label></td><td><input type="text" id="baname" /></td></tr>
+      </table>
+
+      <table>
+        <h2>Exam Marks</h2>
+        <tr><td><label>C++:</label></td><td><input type="number" id="exc++" /></td></tr>
+        <tr><td><label>COA:</label></td><td><input type="number" id="excoa" /></td></tr>
+        <tr><td><label>OS:</label></td><td><input type="number" id="exos" /></td></tr>
+        <tr><td><label>FAM:</label></td><td><input type="number" id="exfam" /></td></tr>
+        <tr><td><label>EOS:</label></td><td><input type="number" id="exeos" /></td></tr>
+      </table>
+
+      <table>
+        <h2>Internal Marks</h2>
+        <tr><td><label>C++:</label></td><td><input type="number" id="intc++" /></td></tr>
+        <tr><td><label>COA:</label></td><td><input type="number" id="intcoa" /></td></tr>
+        <tr><td><label>OS:</label></td><td><input type="number" id="intos" /></td></tr>
+        <tr><td><label>FAM:</label></td><td><input type="number" id="intfam" /></td></tr>
+        <tr><td><label>EOS:</label></td><td><input type="number" id="inteos" /></td></tr>
+      </table>
+
+      <button class="btn" onclick="myfun()">Submit</button>
+    </div>
+
+   
+     <div class="rightdiv">
+      <div class="container">
+        <h1>CHHATRAPATI SHIVAJI MAHARAJ UNIVERSITY</h1>
+        <br>
+        <h2>Navi Mumbai, Panvel, Sector-19</h2>
+        <h3>
+          <label>Student Name:</label> <u><label id="student_name"></label></u>
+          <label>Father Name:</label> <u><label id="father"></label></u>
+          <label>Mother Name:</label> <u><label id="mother"></label></u><br><br>
+          <label>Seat No:</label> <u><label id="seat no"></label></u>
+          <label>Program:</label> <u><label id="program"></label></u>
+          <label>Batch:</label> <u><label id="batch"></label></u>
+        </h3>
+      </div>
+
+      <table border="1" class="table">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Total</th>
+            <th>Exam Marks</th>
+            <th>Internal</th>
+            <th>Total Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>C++</td><td>100</td><td id="mac++"></td><td id="intmc++"></td><td id="tc++"></td></tr>
+          <tr><td>COA</td><td>100</td><td id="macoa"></td><td id="intmcoa"></td><td id="tcoa"></td></tr>
+          <tr><td>OS</td><td>100</td><td id="maos"></td><td id="intmos"></td><td id="tos"></td></tr>
+          <tr><td>FAM</td><td>100</td><td id="mafam"></td><td id="intmfam"></td><td id="tfam"></td></tr>
+          <tr><td>EOS</td><td>100</td><td id="maeos"></td><td id="intmeos"></td><td id="teos"></td></tr>
+        </tbody>
+      </table>
+
+      <center>
+        <h1>Final Result</h1>
+        <div class="box2">
+          <table border="1">
+            <tr>
+              <td>Total</td><td>500</td>
+              <td>Total Marks</td><td id="total"></td>
+            </tr>
+            <tr>
+              <td>Percentage</td><td id="totalper"></td>
+              <td>Division</td><td>A</td>
+            </tr>
+          </table>
+        </div>
+      </center>
+    </div>
+  </div>
+
+   <script>
+        function myfun()
+        {
+            var a= document.getElementById("uname").value;
+               var b= document.getElementById("faname").value;
+               var c= document.getElementById("moname").value; 
+               var d= document.getElementById("senumber").value;
+               var e=document.getElementById("proname").value;
+               var f=document.getElementById("baname").value;
+               var g =parseInt (document.getElementById("exc++").value);
+               var h= parseInt(document.getElementById("excoa").value); 
+               var i=parseInt (document.getElementById("exos").value);
+               var j= parseInt(document.getElementById("exfam").value);
+               var k=parseInt( document.getElementById("exeos").value);
+               var l=parseInt (document.getElementById("intc++").value);
+               var m=parseInt (document.getElementById("intcoa").value); 
+               var n= parseInt(document.getElementById("intos").value);
+               var o=parseInt(document.getElementById("intfam").value);
+               var p=parseInt(document.getElementById("inteos").value);
+
+                document.getElementById("student_name").innerHTML = a;
+                document.getElementById("father").innerHTML = b;
+                document.getElementById("mother").innerHTML = c;
+                document.getElementById("seat no").innerHTML= d;
+                document.getElementById("program").innerHTML = e;
+                document.getElementById("batch").innerHTML= f;
+                document.getElementById("mac++").innerHTML = g
+                document.getElementById("macoa").innerHTML = h;
+                document.getElementById("maos").innerHTML = i;
+                document.getElementById("mafam").innerHTML= j;
+                document.getElementById("maeos").innerHTML = k;
+                document.getElementById("intmc++").innerHTML =l;
+                document.getElementById("intmcoa").innerHTML = m;
+                document.getElementById("intmos").innerHTML = n;
+                 document.getElementById("intmfam").innerHTML= o;
+                document.getElementById("intmeos").innerHTML = p;
+
+                document.getElementById("tc++").innerHTML =(g+l);
+                document.getElementById("tcoa").innerHTML = (h+m);
+                document.getElementById("tos").innerHTML = (i+n);
+                document.getElementById("tfam").innerHTML= (j+o);
+                document.getElementById("teos").innerHTML = (k+p);
+
+                document.getElementById("total").innerHTML= +(g+h+i+j+k+l+m+n+o+p);
+                document.getElementById("totalper").innerHTML= +(g+h+i+j+k+l+m+n+o+p)/500*100+"%";
+
+        }
+    
+
+     
+    
+  </script>
+</body>
+</html >
+
+
